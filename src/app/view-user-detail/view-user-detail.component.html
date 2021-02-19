@@ -1,4 +1,9 @@
 <ion-header class="signed-user"> Signed In Users</ion-header>
-<ion-content *ngFor="let user of users">
-    <p>{{user.name}}</p>
+<ion-content>
+    <ion-item *ngFor="let user of users">
+        <ion-item-list [value]="user.name">Name: {{user.name}}</ion-item-list>
+        <ion-item-list [value]="user.address">Address: {{user.address}}</ion-item-list>
+        <ion-item-list [value]="user.number">Phone Number: {{user.number}}</ion-item-list>
+        <ion-item-list [value]="user.text">Bio: {{user.text}}</ion-item-list>
+    </ion-item>
 </ion-content>
