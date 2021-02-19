@@ -7,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewUserDetailComponent implements OnInit {
 
-  public users = [];
+  users = [];
   url = 'https://fir-angular-dc1a1-default-rtdb.firebaseio.com/data.json'
-  constructor(private http: Http) { }
+  constructor(private _http: Http) { }
 
   ngOnInit() {
-    this.http.get(this.url).subscribe((res) => {
+    this._http.get(this.url).subscribe(res => {
       const data = res.json();
       console.log('res', data)
       //console.log('data', data)
