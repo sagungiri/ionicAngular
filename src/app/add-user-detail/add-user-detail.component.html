@@ -4,13 +4,13 @@
 <ion-content class='cointainer'>
   <ion-card class='add-user'>
     <ion-label>Full Name:</ion-label>
-    <ion-input type='text' placeholder='Full Name'></ion-input>
+    <ion-input type='text' placeholder='Full Name' [(ngModel)]="name"></ion-input>
     <ion-label>Address:</ion-label>
-    <ion-input type='text' placeholder='Address'></ion-input>
+    <ion-input type='text' placeholder='Address' [(ngModel)]="address"></ion-input>
     <ion-label>Phone Number:</ion-label>
-    <ion-input type='number' placeholder='Phone Number'></ion-input>
+    <ion-input type='number' placeholder='Phone Number' [(ngModel)]="number"></ion-input>
     <ion-label>Bio:</ion-label>
-    <ion-input type='text' placeholder='Write Something about Yourself'></ion-input>
-    <ion-button>Continue</ion-button>
+    <ion-input type='text' placeholder='Write Something about Yourself' [(ngModel)]="text"></ion-input>
+    <ion-button (click)="addUserDetailHandler(name, address, number, text)">Continue</ion-button>
   </ion-card>
 </ion-content>
