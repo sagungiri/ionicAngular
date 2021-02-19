@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -13,6 +14,7 @@ import { auth } from './auth/auth';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule,
+    CommonModule,
     FormsModule,
     IonicModule.forRoot(),
     AppRoutingModule,

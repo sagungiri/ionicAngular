@@ -1,4 +1,4 @@
-import { GetUserService } from './../services/getUser/get-user.service';
+import { Http } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-view-user-detail',
@@ -7,13 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewUserDetailComponent implements OnInit {
 
-  users = [];
-  constructor(private _getUser: GetUserService) { }
+  public users = [];
+  url = 'https://fir-angular-dc1a1-default-rtdb.firebaseio.com/data.json'
+  constructor(private http: Http) { }
 
   ngOnInit() {
-    this._getUser.getUserDetailHandler()
-    // this._getUser.getUserDetailHandler()
-    //   .subscribe(resUserData => this.users = resUserData)
+    this.http.get(this.url).subscribe((res) => {
+      const data = res.json();
+      console.log('res', data)
+      //console.log('data', data)
+      this.users.push(data)
+    })
+    console.log('users', this.users)
   }
 
 }

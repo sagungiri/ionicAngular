@@ -18,7 +18,7 @@ export class AddUserDetailComponent implements OnInit {
       address: address,
       number: number,
       text: text
-    }).subscribe(res => console.log(res.status))
+    }).subscribe(res => console.log(res))
   }
 
 }
