@@ -7,9 +7,9 @@ import { Http } from '@angular/http';
   styleUrls: ['./add-user-detail.component.scss'],
 })
 export class AddUserDetailComponent implements OnInit {
-  http: Http
+
   url = 'https://fir-angular-dc1a1-default-rtdb.firebaseio.com/data.json'
-  constructor() { }
+  constructor(private http: Http) { }
 
   ngOnInit() { }
   addUserDetailHandler(name, address, number, text) {
