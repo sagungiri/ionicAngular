@@ -1,4 +1,3 @@
-import { ViewUserDetailComponent } from './../view-user-detail/view-user-detail.component';
 import { AddUserDetailComponent } from './../add-user-detail/add-user-detail.component';
 import { SignInSignUpComponent } from './../sign-in-sign-up/sign-in-sign-up.component';
 import { NgModule } from '@angular/core';
@@ -6,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
+
 import { HomePageRoutingModule } from './home-routing.module';
 
 @NgModule({
@@ -16,9 +16,7 @@ import { HomePageRoutingModule } from './home-routing.module';
     HomePageRoutingModule
   ],
   declarations: [HomePage,
-    SignInSignUpComponent,
-    AddUserDetailComponent,
-    ViewUserDetailComponent
-  ]
+
+  ],
 })
 export class HomePageModule { }

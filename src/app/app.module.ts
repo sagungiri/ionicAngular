@@ -1,3 +1,5 @@
+import { ViewUserDetailComponent } from './view-user-detail/view-user-detail.component';
+import { SignInSignUpComponent } from './sign-in-sign-up/sign-in-sign-up.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,8 +12,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpModule } from '@angular/http';
 import { auth } from './auth/auth';
+import { AddUserDetailComponent } from './add-user-detail/add-user-detail.component';
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,
+    SignInSignUpComponent,
+    AddUserDetailComponent,
+    ViewUserDetailComponent],
   entryComponents: [],
   imports: [BrowserModule,
     CommonModule,
