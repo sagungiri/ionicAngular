@@ -1,0 +1,56 @@
+body{
+    height: 100vh;
+
+  }
+  .login-page{
+    width: 500px;
+   // margin: 100px;
+    align-self: center;
+   
+
+  .form{
+    position: relative;
+    background: rgba(255, 145, 2, 0.8);
+    padding: 50px 30px;
+    text-align: center;
+   
+.input-card{
+    background-color: transparent;
+    padding:15px 0;
+    color: black;
+    font-size: 16px;
+}
+ input{
+    outline: none;
+    width: 100%;
+    border: 0;
+    padding: 40px;
+    box-sizing: border-box;
+    
+  }
+  button{
+    text-transform: uppercase;
+    outline: 0;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .message{
+    margin: 10px 15px;
+    color: rgb(2, 59, 109);
+    font-size: 14px;
+    font-weight: 600;
+    span{
+        text-decoration: none;
+        color: #1c07db;
+        cursor: pointer;
+      }
+  }
+}
+}
+ /* .form .register-form{
+    display: none;
+  } */
