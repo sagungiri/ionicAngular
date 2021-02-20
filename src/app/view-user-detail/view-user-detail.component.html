@@ -1,9 +1,18 @@
-<ion-header class="signed-user"> Signed In Users</ion-header>
+<ion-header class="signed-user">
+    <span>Signed In Users</span>
+    <span>
+        <ion-button (click)="logout()" class="logout">Logout</ion-button>
+    </span>
+</ion-header>
 <ion-content>
-    <ion-item *ngFor="let user of users">
-        <ion-item-list [value]="user.name">Name: {{user.name}}</ion-item-list>
-        <ion-item-list [value]="user.address">Address: {{user.address}}</ion-item-list>
-        <ion-item-list [value]="user.number">Phone Number: {{user.number}}</ion-item-list>
-        <ion-item-list [value]="user.text">Bio: {{user.text}}</ion-item-list>
-    </ion-item>
+    <ion-list>
+        <ion-item *ngFor="let user of users">
+            <ion-label> Name: {{user.name}}</ion-label>
+            <ion-label> Address: {{user.address}}</ion-label>
+            <ion-label> Phone Number: {{user.number}}</ion-label>
+            <ion-label> Bio: {{user.text}}</ion-label>
+        </ion-item>
+    </ion-list>
+
+
 </ion-content>
