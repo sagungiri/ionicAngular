@@ -4,14 +4,14 @@
         <ion-button (click)="logout()" class="logout">Logout</ion-button>
     </span>
 </ion-header>
-<ion-content>
-    <ion-list>
-        <ion-item *ngFor="let user of users">
-            <ion-label> Name: {{user.name}}</ion-label>
-            <ion-label> Address: {{user.address}}</ion-label>
-            <ion-label> Phone Number: {{user.number}}</ion-label>
-            <ion-label> Bio: {{user.text}}</ion-label>
-        </ion-item>
+<ion-content class='ion-content'>
+    <ion-list class="ion-cointainer">
+        <ion-card *ngFor="let user of users" class="item-cointainer">
+            <li class="item-list"> Name: {{user.name}}</li>
+            <li class="item-list"> Address: {{user.address}}</li>
+            <li class="item-list"> Phone Number: {{user.number}}</li>
+            <li class="item-list"> Bio: {{user.text}}</li>
+        </ion-card>
     </ion-list>
 
 

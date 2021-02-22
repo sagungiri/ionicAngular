@@ -1,4 +1,3 @@
-import { HomePage } from './home/home.page';
 import { ViewUserDetailComponent } from './view-user-detail/view-user-detail.component';
 import { SignInSignUpComponent } from './sign-in-sign-up/sign-in-sign-up.component';
 import { NgModule } from '@angular/core';
