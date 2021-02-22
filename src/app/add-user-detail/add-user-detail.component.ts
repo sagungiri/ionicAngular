@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
-
+import * as $ from 'jquery';
+import { NgxSummernoteModule } from 'ngx-summernote';
 @Component({
   selector: 'app-add-user-detail',
   templateUrl: './add-user-detail.component.html',
@@ -9,6 +10,11 @@ import { Router } from '@angular/router';
 })
 export class AddUserDetailComponent implements OnInit {
 
+  config = {
+    placeholder: '',
+    tabsize: 2,
+    height: '200px',
+  }
   url = 'https://fir-angular-dc1a1-default-rtdb.firebaseio.com/data.json'
   constructor(private http: Http,
     private router: Router) {

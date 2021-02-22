@@ -2,18 +2,29 @@
   Welcome, Let's Connect
 </ion-header> -->
 <ion-content class='cointainer'>
-  <div class='add-user'>
-    <ion-label class='user-label'>Full Name:</ion-label>
-    <ion-input type='text' placeholder='Full Name' [(ngModel)]="name" class="user-input">
-    </ion-input>
-    <ion-label class='user-label'>Address:</ion-label>
-    <ion-input type='text' placeholder='Address' [(ngModel)]="address" class="user-input"></ion-input>
-    <ion-label class='user-label'>Phone Number:</ion-label>
-    <ion-input type='number' placeholder='Phone Number' [(ngModel)]="number" class="user-input"></ion-input>
-    <!-- <ion-label class='user-label'>Bio:</ion-label>
+  <div class='add-user floating-form'>
+    <div class="floating-label">
+      <ion-input type='text' class="floating-input" id="floatingInput" [(ngModel)]="name">
+      </ion-input>
+      <ion-label for="floatingInput" class="floating-label">Full Name</ion-label>
+    </div>
+
+    <div class="floating">
+      <ion-input type='text' [(ngModel)]="address" class="user-input"></ion-input>
+      <ion-label class='user-label'>Address</ion-label>
+    </div>
+
+    <div class="floating">
+      <ion-input type='number' [(ngModel)]="number" class="user-input"></ion-input>
+      <ion-label class='user-label'>Phone Number</ion-label>
+    </div>
+
+
     <ion-input id="summernote" type='text' placeholder='Write Something about Yourself' [(ngModel)]="text"
       class="user-input">
-    </ion-input> -->
+    </ion-input>
+    <div [ngxSummerNoteView]="config"></div>
+    <ion-label class='user-label'>Bio:</ion-label>
     <ion-button (click)="addUserDetailHandler(name, address, number, text)">
       Continue
     </ion-button>

@@ -1,3 +1,4 @@
+import { NgxSummernoteModule } from 'ngx-summernote';
 import { ViewUserDetailComponent } from './view-user-detail/view-user-detail.component';
 import { SignInSignUpComponent } from './sign-in-sign-up/sign-in-sign-up.component';
 import { CommonModule } from '@angular/common';
@@ -13,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpModule } from '@angular/http';
 import { auth } from './auth/auth';
 import { AddUserDetailComponent } from './add-user-detail/add-user-detail.component';
+
 @NgModule({
   declarations: [AppComponent,
     SignInSignUpComponent,
@@ -25,7 +27,7 @@ import { AddUserDetailComponent } from './add-user-detail/add-user-detail.compon
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpModule,
-
+    NgxSummernoteModule,
     AngularFireModule.initializeApp(auth)
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
