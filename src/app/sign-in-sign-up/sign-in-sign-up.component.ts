@@ -10,16 +10,17 @@ import { FirebaseService } from '../services/firebase/firebase.service';
 export class SignInSignUpComponent implements OnInit {
 
   title = 'authWithFirebase';
-  isSignedIn = false
+  isSignedIn = false;
+  toogleSignInUp: boolean = true;
   constructor(public firebaseService: FirebaseService,
     private router: Router) {
 
   }
 
-  toogleSignInUp: boolean = true
+
 
   ngOnInit() {
-    if (localStorage.getItem('user') !== null)
+    if (localStorage.getItem('user') != null)
       this.isSignedIn = true
     else
       this.isSignedIn = false
