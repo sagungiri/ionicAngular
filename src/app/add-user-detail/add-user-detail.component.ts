@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-add-user-detail',
   templateUrl: './add-user-detail.component.html',
@@ -10,9 +11,13 @@ export class AddUserDetailComponent implements OnInit {
 
   url = 'https://fir-angular-dc1a1-default-rtdb.firebaseio.com/data.json'
   constructor(private http: Http,
-    private router: Router) { }
+    private router: Router) {
+  }
 
-  ngOnInit() { }
+  ngOnInit() {
+
+  }
+
   addUserDetailHandler(name, address, number, text) {
     if (name.length == '' && address.length == '' && number.length < 5) {
       return false;

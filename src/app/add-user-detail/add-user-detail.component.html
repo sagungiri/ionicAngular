@@ -10,9 +10,10 @@
     <ion-input type='text' placeholder='Address' [(ngModel)]="address" class="user-input"></ion-input>
     <ion-label class='user-label'>Phone Number:</ion-label>
     <ion-input type='number' placeholder='Phone Number' [(ngModel)]="number" class="user-input"></ion-input>
-    <ion-label class='user-label'>Bio:</ion-label>
-    <ion-input type='text' placeholder='Write Something about Yourself' [(ngModel)]="text" class="user-input">
-    </ion-input>
+    <!-- <ion-label class='user-label'>Bio:</ion-label>
+    <ion-input id="summernote" type='text' placeholder='Write Something about Yourself' [(ngModel)]="text"
+      class="user-input">
+    </ion-input> -->
     <ion-button (click)="addUserDetailHandler(name, address, number, text)">
       Continue
     </ion-button>

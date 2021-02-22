@@ -1,48 +1,96 @@
- .login-page{
- width: 400px;
-   position: relative;
-  .form{
-    background:linear-gradient(#1FA2FF,#A6FFCB,yellow);
-    padding: 50px 30px;
-    text-align: center;
-    align-self: center;
-    position: fixed;
-    top: 20%;
-    left: 40%;
+//  .login-page{
+//  width: 400px;
+//    position: relative;
+//   .form{
+//     background:linear-gradient(#1FA2FF,#A6FFCB,yellow);
+//     padding: 50px 30px;
+//     text-align: center;
+//     align-self: center;
+//     position: fixed;
+//     top: 20%;
+//     left: 40%;
    
-.input-card{
-    padding:15px 0;
+// .input-card{
+//     padding:15px 0;
+//     color: black;
+//     font-size: 16px;
+// }
+//  input{
+//     outline: none;
+//     width: 100%;
+//     border: 0;
+//     padding: 40px;
+//     box-sizing: border-box;
+    
+//   }
+//   button{
+//     text-transform: uppercase;
+//     outline: 0;
+//     width: 100%;
+//     border: 0;
+//     padding: 15px;
+//     font-size: 18px;
+//     cursor: pointer;
+//   }
+
+//   .message{
+//     margin: 10px 15px;
+//     color: rgb(2, 59, 109);
+//     font-size: 14px;
+//     font-weight: 600;
+//     span{
+//         text-decoration: none;
+//         color: #1c07db;
+//         cursor: pointer;
+//       }
+//   }
+// }
+// }
+
+.form{
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  height: 100%;
+
+  
+}
+.register-form, .login-form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(10, 10, 10, 0.1);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.4);
+  border-radius: 10px;
+  
+  .input-card{
+    position: relative;
     color: black;
     font-size: 16px;
-}
- input{
-    outline: none;
-    width: 100%;
-    border: 0;
-    padding: 40px;
-    box-sizing: border-box;
-    
+    input{
+ width: 100%;
+  padding: 10px 0;
+ 
+  
+  margin-bottom: 30px;
+  background: transparent;
+ 
+    }
+  
   }
-  button{
-    text-transform: uppercase;
-    outline: 0;
-    width: 100%;
-    border: 0;
-    padding: 15px;
-    font-size: 18px;
-    cursor: pointer;
-  }
-
   .message{
-    margin: 10px 15px;
-    color: rgb(2, 59, 109);
-    font-size: 14px;
-    font-weight: 600;
-    span{
-        text-decoration: none;
-        color: #1c07db;
-        cursor: pointer;
+    padding: 10px 0;
+        color: rgb(2, 59, 109);
+        font-size: 14px;
+        font-weight: 600;
+        span{
+            text-decoration: none;
+            color: #1c07db;
+            cursor: pointer;
+          }
       }
-  }
-}
 }

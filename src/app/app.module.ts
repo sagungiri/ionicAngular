@@ -13,7 +13,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpModule } from '@angular/http';
 import { auth } from './auth/auth';
 import { AddUserDetailComponent } from './add-user-detail/add-user-detail.component';
-
 @NgModule({
   declarations: [AppComponent,
     SignInSignUpComponent,
@@ -26,6 +25,7 @@ import { AddUserDetailComponent } from './add-user-detail/add-user-detail.compon
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpModule,
+
     AngularFireModule.initializeApp(auth)
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

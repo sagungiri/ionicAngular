@@ -2,16 +2,25 @@
   <ion-card class="form">
 
     <form class="register-form" *ngIf="!isSignedIn && !toogleSignInUp">
+
       <div class="input-card">
-        <ion-input type="text" placeholder="Email" #emailSignup></ion-input>
-        <ion-input type="text" placeholder="Password" #passwordSignup></ion-input>
+        <ion-input type="text" #emailSignup required='' placeholder='Email'></ion-input>
+
       </div>
+      <div class="input-card">
+        <ion-input type="password" #passwordSignup placeholder='Password' required=''></ion-input>
+
+      </div>
+
       <ion-button (click)="onSignup(emailSignup.value,passwordSignup.value)">Sign Up</ion-button>
       <p class="message">Already Registered? <span (click)="forLogIn()">Login</span></p>
     </form>
+
     <form class="login-form" *ngIf="!isSignedIn && toogleSignInUp">
       <div class="input-card">
         <ion-input type="text" placeholder="Email" #email></ion-input>
+      </div>
+      <div class="input-card">
         <ion-input type="password" placeholder="Password" #password></ion-input>
       </div>
       <ion-button (click)="onSignin(email.value,password.value)">Login</ion-button>
