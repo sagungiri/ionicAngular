@@ -14,13 +14,18 @@ export class AddUserDetailComponent implements OnInit {
 
   ngOnInit() { }
   addUserDetailHandler(name, address, number, text) {
-    this.http.post(this.url, {
-      name: name,
-      address: address,
-      number: number,
-      text: text
-    }).subscribe(res => console.log(res))
-    this.router.navigateByUrl('/viewuser');
+    if (name.length == '' && address.length == '' && number.length < 5) {
+      return false;
+    }
+    else {
+      this.http.post(this.url, {
+        name: name,
+        address: address,
+        number: number,
+        text: text
+      }).subscribe(res => console.log(res))
+      this.router.navigateByUrl('/viewuser');
+    }
   }
 
 }
