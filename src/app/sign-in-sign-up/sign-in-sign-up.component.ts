@@ -17,13 +17,11 @@ export class SignInSignUpComponent implements OnInit {
 
   }
 
-
-
   ngOnInit() {
     if (localStorage.getItem('user') != null)
-      this.isSignedIn = true
+      this.isSignedIn = true;
     else
-      this.isSignedIn = false
+      this.isSignedIn = false;
   }
 
   forLogIn() {
@@ -34,19 +32,19 @@ export class SignInSignUpComponent implements OnInit {
   }
 
   async onSignup(email: string, password: string) {
-    await this.firebaseService.signUp(email, password)
+    await this.firebaseService.signUp(email, password);
     if (this.firebaseService.isLoggedIn)
-      this.isSignedIn = true
+      this.isSignedIn = true;
     this.router.navigateByUrl('/adduser');
   }
   async onSignin(email: string, password: string) {
-    await this.firebaseService.signIn(email, password)
+    await this.firebaseService.signIn(email, password);
     if (this.firebaseService.isLoggedIn)
-      this.isSignedIn = true
+      this.isSignedIn = true;
     this.router.navigateByUrl('/viewuser');
   }
   handleLogout() {
-    this.isSignedIn = false
+    this.isSignedIn = false;
 
   }
 }

@@ -23,7 +23,7 @@ export class AddUserDetailComponent implements OnInit {
         address: address,
         number: number,
         text: text
-      }).subscribe(res => console.log(res))
+      }).subscribe(res => console.log(res));
       this.router.navigateByUrl('/viewuser');
     }
   }

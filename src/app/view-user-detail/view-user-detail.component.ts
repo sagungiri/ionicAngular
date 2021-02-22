@@ -10,7 +10,7 @@ import { FirebaseService } from '../services/firebase/firebase.service';
 export class ViewUserDetailComponent implements OnInit {
 
   users = [];
-  @Output() isLogout = new EventEmitter<void>()
+  @Output() isLogout = new EventEmitter<void>();
 
   url = 'https://fir-angular-dc1a1-default-rtdb.firebaseio.com/data.json'
   constructor(private _http: Http,
@@ -34,9 +34,9 @@ export class ViewUserDetailComponent implements OnInit {
     console.log('users', this.users);
   }
   logout = () => {
-    this.firebaseService.logOut()
-    this.isLogout.emit()
-    this.router.navigateByUrl('/')
+    this.firebaseService.logOut();
+    this.isLogout.emit();
+    this.router.navigateByUrl('/');
 
   }
 
