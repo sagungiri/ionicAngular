@@ -1,32 +1,29 @@
-<!-- <ion-header>
-  Welcome, Let's Connect
-</ion-header> -->
-<ion-content class='cointainer'>
-  <div class='add-user floating-form'>
-    <div class="floating-label">
-      <ion-input type='text' class="floating-input" id="floatingInput" [(ngModel)]="name">
-      </ion-input>
-      <ion-label for="floatingInput" class="floating-label">Full Name</ion-label>
+<div class="box">
+  <form>
+    <div class="group">
+      <input class="inputMaterial" type="text" name="name" [(ngModel)]="name" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Username</label>
     </div>
-
-    <div class="floating">
-      <ion-input type='text' [(ngModel)]="address" class="user-input"></ion-input>
-      <ion-label class='user-label'>Address</ion-label>
+    <div class="group">
+      <input class="inputMaterial" type="test" name="address" [(ngModel)]="address" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Address</label>
     </div>
-
-    <div class="floating">
-      <ion-input type='number' [(ngModel)]="number" class="user-input"></ion-input>
-      <ion-label class='user-label'>Phone Number</ion-label>
+    <div class="group">
+      <input class="inputMaterial" type="number" name="number" [(ngModel)]="number" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Phone Number</label>
     </div>
-
-
-    <ion-input id="summernote" type='text' placeholder='Write Something about Yourself' [(ngModel)]="text"
-      class="user-input">
-    </ion-input>
-    <div [ngxSummerNoteView]="config"></div>
-    <ion-label class='user-label'>Bio:</ion-label>
-    <ion-button (click)="addUserDetailHandler(name, address, number, text)">
-      Continue
-    </ion-button>
-  </div>
-</ion-content>
+    <div class="group">
+      <input class="inputMaterial" type='text' name="text" [(ngModel)]="text" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Bio</label>
+    </div>
+    <button id="buttonlogintoregister" (click)="addUserDetailHandler(name, address, number, text)">Submit</button>
+  </form>
+</div>
