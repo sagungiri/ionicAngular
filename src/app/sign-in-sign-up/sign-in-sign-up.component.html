@@ -31,7 +31,7 @@
                 <p class="invalidData">Your Password Must be of 6 Character</p>
               </ion-item>
               <div class='ion-margin-vertical ion-text-right'>
-                <ion-button type='submit' (click)="onSignup(emailSignup.value,passwordSignup.value)">Sign Up</ion-button>
+                <ion-button type='submit' (click)="onSignup(emailSignup.value,passwordSignup.value)"[disabled]='!form.valid'>Sign Up</ion-button>
               </div>
               <p class='message'>Already have Account?, Please Click <span (click)="forLogIn()">Here</span> for Log In
               </p>
@@ -61,7 +61,7 @@
                 <p class="invalidData">Your Password Must be of 6 Character</p>
               </ion-item>
               <div class='ion-margin-vertical ion-text-right'>
-                <ion-button type='submit' (click)="onSignin(email.value,password.value)">Log In</ion-button>
+                <ion-button type='submit' (click)="onSignin(email.value,password.value)"[disabled]='!form.valid'>Log In</ion-button>
               </div>
               <p class='message'>For Registering New Account, Please Click <span (click)="forRegister()">Here</span>
               </p>
