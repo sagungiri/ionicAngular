@@ -1,18 +1,42 @@
-<ion-header class="signed-user">
-    <span>Signed In Users</span>
-    <span>
-        <ion-button (click)="logout()" class="logout">Logout</ion-button>
-    </span>
+<ion-app>
+<ion-header>
+    <ion-toolbar color='secondary'>
+       
+        <div class="ion-text-left">
+            <ion-title class=""> Signed In Users</ion-title>
+        </div> 
+            <div class='ion-text-right ion-margin-horizontal menu-ion'>
+                <ion-label class="menu-label"> Home</ion-label>
+                <ion-label class="menu-label"> My Profile</ion-label>
+                <ion-label  class="menu-label" (click)="logout()">Logout</ion-label>
+            </div> 
+
+          
+      </ion-toolbar>
 </ion-header>
-<ion-content class='ion-content'>
-    <ion-list class="ion-cointainer">
-        <ion-card *ngFor="let user of users" class="item-cointainer">
-            <li class="item-list"> Name: {{user.name}}</li>
-            <li class="item-list"> Address: {{user.address}}</li>
-            <li class="item-list"> Phone Number: {{user.number}}</li>
-            <li class="item-list"> Bio: {{user.text}}</li>
-        </ion-card>
-    </ion-list>
-
-
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col size-md='4' *ngFor="let user of users" >
+                <ion-card >
+                    <ion-card-content>
+                    <ion-item>
+                        <ion-label>Name: {{user.name}}</ion-label>
+                    </ion-item>
+                        <!-- <ion-item>
+                    <ion-label> Address: {{user.address}}</ion-label>
+                </ion-item> -->
+                <ion-item>
+                    <ion-label> Phone Number: {{user.number}}</ion-label>
+                </ion-item>
+                <!-- <ion-item>
+                   <ion-label> Bio: {{user.text}}</ion-label>
+                </ion-item> -->
+                </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+        
 </ion-content>
+</ion-app>

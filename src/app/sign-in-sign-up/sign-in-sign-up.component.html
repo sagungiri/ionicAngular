@@ -7,6 +7,7 @@
     </ion-toolbar>
   </ion-header>
   <ion-content class="login-page">
+    <form #form="ngForm" (ngSubmit)='onSubmit(form)'>
     <ion-grid>
       <ion-row>
         <ion-col size-md='4' offset='4' *ngIf="!isSignedIn && !toogleSignInUp">
@@ -17,14 +18,20 @@
             <ion-card-content>
               <ion-item>
                 <ion-label position="floating">Email</ion-label>
-                <ion-input type='text' #emailSignup required=''></ion-input>
+                <ion-input type='email' #emailSignup ngModel name='email' required email #emailCtrl='ngModel'></ion-input>
+              </ion-item>
+              <ion-item *ngIf="!emailCtrl.valid && emailCtrl.touched" lines='none'>
+                <p class="invalidData">Please Enter Valid Email</p>
               </ion-item>
               <ion-item>
                 <ion-label position="floating">Password</ion-label>
-                <ion-input type='password' #passwordSignup required=''></ion-input>
+                <ion-input type='password' #passwordSignup ngModel name='password' required minlength='6' #passwordCtrl='ngModel'></ion-input>
+              </ion-item>
+              <ion-item *ngIf="!passwordCtrl.valid && passwordCtrl.touched" lines='none'>
+                <p class="invalidData">Your Password Must be of 6 Character</p>
               </ion-item>
               <div class='ion-margin-vertical ion-text-right'>
-                <ion-button (click)="onSignup(emailSignup.value,passwordSignup.value)">Sign Up</ion-button>
+                <ion-button type='submit' (click)="onSignup(emailSignup.value,passwordSignup.value)">Sign Up</ion-button>
               </div>
               <p class='message'>Already have Account?, Please Click <span (click)="forLogIn()">Here</span> for Log In
               </p>
@@ -40,14 +47,21 @@
             <ion-card-content>
               <ion-item>
                 <ion-label position="floating">Email</ion-label>
-                <ion-input type='text' #email></ion-input>
+                <ion-input type='email' #email  ngModel name='email' required email #emailCtrl='ngModel'></ion-input>
+                
+              </ion-item>
+              <ion-item *ngIf="!emailCtrl.valid && emailCtrl.touched" lines='none'>
+                <p class="invalidData">Please Enter Valid Email</p>
               </ion-item>
               <ion-item>
                 <ion-label position="floating">Password</ion-label>
-                <ion-input type='password' #password></ion-input>
+                <ion-input type='password' #password  ngModel name='password' required minlength='6' #passwordCtrl='ngModel'></ion-input>
+              </ion-item>
+              <ion-item *ngIf="!passwordCtrl.valid && passwordCtrl.touched" lines='none'>
+                <p class="invalidData">Your Password Must be of 6 Character</p>
               </ion-item>
               <div class='ion-margin-vertical ion-text-right'>
-                <ion-button (click)="onSignin(email.value,password.value)">Log In</ion-button>
+                <ion-button type='submit' (click)="onSignin(email.value,password.value)">Log In</ion-button>
               </div>
               <p class='message'>For Registering New Account, Please Click <span (click)="forRegister()">Here</span>
               </p>
@@ -56,5 +70,6 @@
         </ion-col>
       </ion-row>
     </ion-grid>
+  </form>
   </ion-content>
 </ion-app>

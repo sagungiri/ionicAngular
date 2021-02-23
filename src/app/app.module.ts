@@ -16,6 +16,7 @@ import { HttpModule } from '@angular/http';
 import { auth } from './auth/auth';
 import { AddUserDetailComponent } from './add-user-detail/add-user-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpModule,
     NgxSummernoteModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(auth)
+    AngularFireModule.initializeApp(auth),
+    SweetAlert2Module
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     FirebaseService],
