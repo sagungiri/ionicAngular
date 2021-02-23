@@ -1,47 +1,19 @@
-.form{
-  margin:0;
-  padding:0;
-  font-family: sans-serif;
-  height: 100%;
-
-  
+.card-header{
+    font-size: 17px;
+    font-weight: 600;
+    color:rgb(2, 59, 109);
+    
 }
-.register-form, .login-form{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  padding: 40px;
-  transform: translate(-50%, -50%);
-  background: rgba(10, 10, 10, 0.1);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.4);
-  border-radius: 10px;
-  
-  .input-card{
-    position: relative;
-    color: black;
-    font-size: 16px;
-    input{
- width: 100%;
-  padding: 10px 0;
- 
-  
-  margin-bottom: 30px;
-  background: transparent;
- 
-    }
-  
-  }
-  .message{
+.message{
+    text-align: center;
     padding: 10px 0;
         color: rgb(2, 59, 109);
         font-size: 14px;
-        font-weight: 600;
+        font-weight: 500;
         span{
+            font-weight: 600;
             text-decoration: none;
             color: #1c07db;
             cursor: pointer;
           }
-      }
-}
+        }
