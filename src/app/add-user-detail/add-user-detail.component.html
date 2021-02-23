@@ -1,4 +1,4 @@
-<div class="box">
+<!-- <div class="box">
   <form>
     <div class="group">
       <input class="inputMaterial" type="text" name="name" [(ngModel)]="name" required>
@@ -26,4 +26,49 @@
     </div>
     <button (click)="addUserDetailHandler(name, address, number, text)">Submit</button>
   </form>
-</div>
+</div> -->
+
+<ion-app>
+  <ion-header>
+    <ion-toolbar color='secondary'>
+      <ion-title> Detail Form</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md='8' offset='2'>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+                Please Fill Up Your Details
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item>
+                <ion-label position="floating">Full Name</ion-label>
+                <ion-input type='text' [(ngModel)]="name"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Address</ion-label>
+                <ion-input type='text' [(ngModel)]="address"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Phone Number</ion-label>
+                <ion-input type='number' [(ngModel)]="number"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Bio</ion-label>
+                <ion-textarea type='text' [(ngModel)]="text"></ion-textarea>
+              </ion-item>
+              <div class='ion-margin-vertical ion-text-right'>
+                <ion-button (click)="addUserDetailHandler(name, address, number, text)">Submit</ion-button>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-content>
+</ion-app>

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
-import * as $ from 'jquery';
-import { NgxSummernoteModule } from 'ngx-summernote';
+
 @Component({
   selector: 'app-add-user-detail',
   templateUrl: './add-user-detail.component.html',
@@ -10,21 +9,6 @@ import { NgxSummernoteModule } from 'ngx-summernote';
 })
 export class AddUserDetailComponent implements OnInit {
 
-  config = {
-    placeholder: '',
-    tabsize: 2,
-    height: '200px',
-    uploadImagePath: '/api/upload',
-    toolbar: [
-      ['misc', ['codeview', 'undo', 'redo']],
-      ['style', ['bold', 'italic', 'underline', 'clear']],
-      ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear']],
-      ['fontsize', ['fontname', 'fontsize', 'color']],
-      ['para', ['style', 'ul', 'ol', 'paragraph', 'height']],
-      ['insert', ['table', 'picture', 'link', 'video', 'hr']]
-    ],
-    fontNames: ['Helvetica', 'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Roboto', 'Times']
-  }
 
 
   url = 'https://fir-angular-dc1a1-default-rtdb.firebaseio.com/data.json'
