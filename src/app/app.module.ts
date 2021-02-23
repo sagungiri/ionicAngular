@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AngularFireModule } from '@angular/fire';
 import { FirebaseService } from './services/firebase/firebase.service';
@@ -14,6 +15,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpModule } from '@angular/http';
 import { auth } from './auth/auth';
 import { AddUserDetailComponent } from './add-user-detail/add-user-detail.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [AppComponent,
@@ -26,8 +29,10 @@ import { AddUserDetailComponent } from './add-user-detail/add-user-detail.compon
     FormsModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    HttpClientModule,
     HttpModule,
     NgxSummernoteModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(auth)
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

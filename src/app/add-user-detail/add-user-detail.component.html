@@ -28,8 +28,11 @@
                 <ion-input type='number' [(ngModel)]="number"></ion-input>
               </ion-item>
               <ion-item>
-                <ion-label position="floating">Bio</ion-label>
-                <ion-textarea type='text' [(ngModel)]="text"></ion-textarea>
+                <ion-list>
+                  <ion-label >Bio</ion-label>
+                  <div [ngxSummernote]='config'  [(ngModel)]="text"></div>
+                <div [ngxSummernoteView]="content"></div>
+                </ion-list>
               </ion-item>
               <div class='ion-margin-vertical ion-text-right'>
                 <ion-button (click)="addUserDetailHandler(name, address, number, text)">Submit</ion-button>
