@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-user-detail',
@@ -48,7 +48,14 @@ export class AddUserDetailComponent implements OnInit {
         number: number,
         text: text
       }).subscribe(res => console.log(res));
-      this.router.navigateByUrl('/viewuser');
+      this.router.navigateByUrl('/');
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Please Login To Proceed',
+        showConfirmButton: false,
+        timer: 2000
+      });
     }
   }
 

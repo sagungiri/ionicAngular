@@ -1,5 +1,5 @@
 <ion-app>
-  <ion-header>
+  <ion-header  size-sm='4'>
     <ion-toolbar color='secondary'>
       <ion-title>
         Welcome To Our App!!!!
@@ -10,7 +10,7 @@
     <form #form="ngForm" (ngSubmit)='onSubmit(form)'>
     <ion-grid>
       <ion-row>
-        <ion-col size-md='4' offset='4' *ngIf="!isSignedIn && !toogleSignInUp">
+        <ion-col size-sm='4' offset='3' *ngIf="!isSignedIn && !toogleSignInUp">
           <ion-card>
             <ion-card-header class="card-header">
               Please Register With your Email
@@ -39,7 +39,7 @@
           </ion-card>
         </ion-col>
 
-        <ion-col size-md='4' offset='4' *ngIf="!isSignedIn && toogleSignInUp">
+        <ion-col size-sm='4' offset='3' *ngIf="!isSignedIn && toogleSignInUp">
           <ion-card>
             <ion-card-header class="card-header">
               Please Log In To Continue

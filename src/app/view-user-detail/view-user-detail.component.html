@@ -1,17 +1,10 @@
 <ion-app>
 <ion-header>
     <ion-toolbar color='secondary'>
-       
-        <div class="ion-text-left">
-            <ion-title class=""> Signed In Users</ion-title>
-        </div> 
-            <div class='ion-text-right ion-margin-horizontal menu-ion'>
-                <ion-label class="menu-label"> Home</ion-label>
-                <ion-label class="menu-label"> My Profile</ion-label>
-                <ion-label  class="menu-label" (click)="logout()">Logout</ion-label>
-            </div> 
-
-          
+        <ion-buttons slot="start"  id="main-content">
+            <ion-menu-button menu='m1'></ion-menu-button>
+        </ion-buttons>
+            <ion-title> Signed In Users</ion-title>
       </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -20,13 +13,13 @@
             <ion-col size-md='4' *ngFor="let user of users" >
                 <ion-card >
                     <ion-card-content>
-                    <ion-item>
+                    <ion-item lines='none'>
                         <ion-label>Name: {{user.name}}</ion-label>
                     </ion-item>
                         <!-- <ion-item>
                     <ion-label> Address: {{user.address}}</ion-label>
                 </ion-item> -->
-                <ion-item>
+                <ion-item  lines='none'>
                     <ion-label> Phone Number: {{user.number}}</ion-label>
                 </ion-item>
                 <!-- <ion-item>
