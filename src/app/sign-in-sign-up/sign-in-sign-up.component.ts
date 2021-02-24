@@ -44,7 +44,7 @@ export class SignInSignUpComponent implements OnInit {
       setTimeout(()=>{
         this.isLoading= false;
         loadingEl.dismiss();
-      }, 1000);
+      }, 2000);
     })
     await this.firebaseService.signUp(email, password);
     if (this.firebaseService.isLoggedIn)
