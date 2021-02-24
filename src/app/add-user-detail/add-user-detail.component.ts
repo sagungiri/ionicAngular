@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
+import { LoadingController } from '@ionic/angular';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,6 +13,7 @@ import Swal from 'sweetalert2';
 
 
 export class AddUserDetailComponent implements OnInit {
+  isLoading= false;
   config = {
     placeholder: '',
     tabsize: 2,
@@ -30,7 +32,8 @@ export class AddUserDetailComponent implements OnInit {
 
   url = 'https://fir-angular-dc1a1-default-rtdb.firebaseio.com/data.json'
   constructor(private http: Http,
-    private router: Router) {
+    private router: Router,
+    private loadingCtrl: LoadingController) {
   }
 
   ngOnInit() {
@@ -42,6 +45,15 @@ export class AddUserDetailComponent implements OnInit {
       return false;
     }
     else {
+      this.isLoading= true;
+    this.loadingCtrl.create({keyboardClose:true, message:'Getting Your Data Ready....'})
+      .then(loadingEl=>{
+        loadingEl.present();
+        setTimeout(()=>{
+          this.isLoading= false;
+          loadingEl.dismiss();
+        }, 2000);
+      })
       this.http.post(this.url, {
         name: name,
         address: address,

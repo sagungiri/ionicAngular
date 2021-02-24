@@ -37,7 +37,6 @@ export class SignInSignUpComponent implements OnInit {
 
   async onSignup(email: string, password: string) {
     this.isLoading= true;
-
     this.loadingCtrl.create({keyboardClose:true, message:'SigningIn.....'})
     .then(loadingEl=>{
       loadingEl.present();
@@ -82,7 +81,6 @@ export class SignInSignUpComponent implements OnInit {
   }
   handleLogout() {
     this.isSignedIn = false;
-
   }
   onSubmit(form: NgForm){
     console.log('form')
