@@ -38,7 +38,7 @@ export class AddUserDetailComponent implements OnInit {
   }
 
   addUserDetailHandler(name, address, number, text) {
-    if (name.length == '' && address.length == '' && number.length < 5) {
+    if (name.length == '' && address.length == '' && number.length < 10) {
       return false;
     }
     else {
