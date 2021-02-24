@@ -61,6 +61,7 @@
                 <p class="invalidData">Your Password Must be of 6 Character</p>
               </ion-item>
               <div class='ion-margin-vertical ion-text-right'>
+                <!-- <ion-spinner color='primary' *ngIf="isLoading"></ion-spinner> -->
                 <ion-button type='submit' (click)="onSignin(email.value,password.value)"[disabled]='!form.valid'>Log In</ion-button>
               </div>
               <p class='message'>For Registering New Account, Please Click <span (click)="forRegister()">Here</span>
