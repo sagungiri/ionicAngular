@@ -18,7 +18,7 @@ import { auth } from './auth/auth';
 import { AddUserDetailComponent } from './add-user-detail/add-user-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-
+import { NgxPopperModule } from 'ngx-popper';
 @NgModule({
   declarations: [AppComponent,
     SignInSignUpComponent,
@@ -36,7 +36,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     NgxSummernoteModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(auth),
-    SweetAlert2Module
+    SweetAlert2Module,
+   NgxPopperModule.forRoot()
   ],
   providers: [{ provide: RouteReuseStrategy, useClass:IonicRouteStrategy},
     FirebaseService],
