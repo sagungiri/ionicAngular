@@ -16,13 +16,13 @@ const routes: Routes = [
     path: 'adduser',
     component: AddUserDetailComponent,
     pathMatch: 'full',
-    canLoad:[AuthGuard]
+    canActivate:[AuthGuard]
   },
   {
     path: 'viewuser',
     component: ViewUserDetailComponent,
     pathMatch: 'full',
-    canLoad:[AuthGuard]
+    canActivate:[AuthGuard]
   }
 ];
 
