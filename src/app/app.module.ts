@@ -1,8 +1,9 @@
+import { ProfileComponent } from './profile/profile.component';
 import { NgxSummernoteModule } from 'ngx-summernote';
 import { ViewUserDetailComponent } from './view-user-detail/view-user-detail.component';
 import { SignInSignUpComponent } from './sign-in-sign-up/sign-in-sign-up.component';
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import {  NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -18,12 +19,12 @@ import { AddUserDetailComponent } from './add-user-detail/add-user-detail.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
-
 @NgModule({
   declarations: [AppComponent,
     SignInSignUpComponent,
     AddUserDetailComponent,
-    ViewUserDetailComponent],
+    ViewUserDetailComponent,
+  ProfileComponent],
   entryComponents: [],
   imports: [BrowserModule,
     CommonModule,
@@ -37,7 +38,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     AngularFireModule.initializeApp(auth),
     SweetAlert2Module
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+  providers: [{ provide: RouteReuseStrategy, useClass:IonicRouteStrategy},
     FirebaseService],
   bootstrap: [AppComponent],
 })

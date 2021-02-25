@@ -51,5 +51,4 @@ export class ViewUserDetailComponent implements OnInit {
     this.router.navigateByUrl('/');
 
   }
-
 }

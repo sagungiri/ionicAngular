@@ -4,7 +4,7 @@ import { SignInSignUpComponent } from './sign-in-sign-up/sign-in-sign-up.compone
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AddUserDetailComponent } from './add-user-detail/add-user-detail.component';
-
+import {ProfileComponent} from './profile/profile.component';
 const routes: Routes = [
   {
     path: '',
@@ -22,7 +22,13 @@ const routes: Routes = [
     path: 'viewuser',
     component: ViewUserDetailComponent,
     pathMatch: 'full',
-    canActivate:[AuthGuard]
+   // canActivate:[AuthGuard]
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    pathMatch: 'full',
+   // canActivate:[AuthGuard]
   }
 ];
 
