@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth/auth.guard';
 import { ViewUserDetailComponent } from './view-user-detail/view-user-detail.component';
 import { SignInSignUpComponent } from './sign-in-sign-up/sign-in-sign-up.component';
 import { NgModule } from '@angular/core';
@@ -14,12 +15,14 @@ const routes: Routes = [
   {
     path: 'adduser',
     component: AddUserDetailComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canLoad:[AuthGuard]
   },
   {
     path: 'viewuser',
     component: ViewUserDetailComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canLoad:[AuthGuard]
   }
 ];
 

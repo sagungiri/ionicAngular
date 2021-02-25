@@ -8,6 +8,7 @@ export class FirebaseService {
 
   isLoggedIn = false;
   constructor(public firebaseAuth: AngularFireAuth) { }
+  
   async signIn(email: string, password: string) {
     await this.firebaseAuth.signInWithEmailAndPassword(email, password)
       .then(res => {
@@ -20,7 +21,7 @@ export class FirebaseService {
     await this.firebaseAuth.createUserWithEmailAndPassword(email, password)
       .then(res => {
         this.isLoggedIn = true;
-        localStorage.setItem('user', JSON.stringify(res.user))
+       localStorage.setItem('user', JSON.stringify(res.user))
       })
   }
   logOut() {

@@ -22,10 +22,11 @@ export class SignInSignUpComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (localStorage.getItem('user') != null)
-      this.isSignedIn = true;
-    else
-      this.isSignedIn = false;
+    this.isSignedIn = true;
+    if (localStorage.getItem('user') != null){}
+  else{
+    this.isSignedIn = false;
+  }
   }
 
   forLogIn() {
