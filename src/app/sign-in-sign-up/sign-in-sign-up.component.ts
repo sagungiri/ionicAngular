@@ -23,7 +23,9 @@ export class SignInSignUpComponent implements OnInit {
 
   ngOnInit() {
     this.isSignedIn = true;
-    if (localStorage.getItem('user') != null){}
+    if (localStorage.getItem('user') != null){
+      this.router.navigateByUrl('/viewuser');
+    }
   else{
     this.isSignedIn = false;
   }
@@ -59,7 +61,7 @@ export class SignInSignUpComponent implements OnInit {
     });
     
   }
-  async onSignin(email: string, password: string) {
+  async onSignin(email: string, password: string) {  
     this.isLoading= true;
     this.loadingCtrl.create({keyboardClose:true, message:'Logging In.....'})
     .then(loadingEl=>{
@@ -70,9 +72,11 @@ export class SignInSignUpComponent implements OnInit {
       }, 2000);
     })
     await this.firebaseService.signIn(email, password);
-    if (this.firebaseService.isLoggedIn)
+    if (this.firebaseService.isLoggedIn){
       this.isSignedIn = true;
+      localStorage.setItem(email, password);
     this.router.navigateByUrl('/viewuser');
+  }
     Swal.fire({
       position: 'center',
       icon: 'success',
@@ -82,10 +86,11 @@ export class SignInSignUpComponent implements OnInit {
     });
   }
   handleLogout() {
+    localStorage.clear();
     this.isSignedIn = false;
   }
   onSubmit(form: NgForm){
-    console.log('form')
+    console.log('form');
   }
 }
 

@@ -9,7 +9,7 @@ import { Component, OnInit} from '@angular/core';
 export class ViewUserDetailComponent implements OnInit {
 
   users = [];
-//showModal=false;
+showModal=false;
 
   url = 'https://fir-angular-dc1a1-default-rtdb.firebaseio.com/data.json'
   constructor(private _http: Http,
@@ -33,9 +33,11 @@ export class ViewUserDetailComponent implements OnInit {
   }
 
   listDetail(i){
-    console.log(i)
+   //let dataIndex = i;
+   //this.router.navigateByUrl(i)
+//return dataIndex;
 
-    //console.log(this.users[i])
+    console.log(this.users[i])
     // if(this.users[i]){
     //   this.showModal=true;
     // }

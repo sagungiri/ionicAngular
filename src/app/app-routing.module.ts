@@ -1,3 +1,4 @@
+import { UserdetailComponent } from './userdetail/userdetail.component';
 import { AuthGuard } from './auth/auth.guard';
 import { ViewUserDetailComponent } from './view-user-detail/view-user-detail.component';
 import { SignInSignUpComponent } from './sign-in-sign-up/sign-in-sign-up.component';
@@ -23,7 +24,7 @@ const routes: Routes = [
   {
     path: 'viewuser',
     component: ViewUserDetailComponent, children: [
-     // { path: ':userId', component: UsersDetailComponent },
+      { path: ':id', component: UserdetailComponent },
     {path:'**', component: ViewUserDetailComponent}]
    // canActivate:[AuthGuard]
   },

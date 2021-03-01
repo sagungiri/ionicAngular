@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { ViewUserDetailComponent } from './../view-user-detail/view-user-detail.component';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-userdetail',
@@ -7,8 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserdetailComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {}
+  constructor(
+    private _Activatedroute:ActivatedRoute
+  ) { }
+
+  ngOnInit() {
+  }
 
 }

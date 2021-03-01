@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Sanitizer } from '@angular/core';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import Swal from 'sweetalert2';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-add-user-detail',
@@ -41,6 +42,12 @@ export class AddUserDetailComponent implements OnInit {
   }
 
   addUserDetailHandler(name, address, number, text) {
+
+  //  let strToHTMl = (text) =>{
+  //     var parser = new DOMParser();
+  //     var doc = parser.parseFromString(text, 'text/html');
+  //     return doc.body;
+  //  }
     if (name.length == '' && address.length == '' && number.length < 10) {
       return false;
     }
