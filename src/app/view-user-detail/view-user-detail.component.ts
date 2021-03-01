@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Http } from '@angular/http';
 import { Component, OnInit} from '@angular/core';
 @Component({
@@ -8,10 +9,11 @@ import { Component, OnInit} from '@angular/core';
 export class ViewUserDetailComponent implements OnInit {
 
   users = [];
-showModal=false;
+//showModal=false;
 
   url = 'https://fir-angular-dc1a1-default-rtdb.firebaseio.com/data.json'
-  constructor(private _http: Http) { }
+  constructor(private _http: Http,
+    private router:Router) { }
 
   ngOnInit() {
     this._http.get(this.url).subscribe(res => {
@@ -32,11 +34,11 @@ showModal=false;
 
   listDetail(i){
     console.log(i)
+
     //console.log(this.users[i])
     // if(this.users[i]){
     //   this.showModal=true;
     // }
    
   }
-
 }

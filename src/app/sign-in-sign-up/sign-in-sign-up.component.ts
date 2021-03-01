@@ -57,6 +57,7 @@ export class SignInSignUpComponent implements OnInit {
       showConfirmButton: false,
       timer: 4000
     });
+    
   }
   async onSignin(email: string, password: string) {
     this.isLoading= true;

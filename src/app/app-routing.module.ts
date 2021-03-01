@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AddUserDetailComponent } from './add-user-detail/add-user-detail.component';
 import {ProfileComponent} from './profile/profile.component';
+
+
 const routes: Routes = [
   {
     path: '',
@@ -16,12 +18,13 @@ const routes: Routes = [
     path: 'adduser',
     component: AddUserDetailComponent,
     pathMatch: 'full',
-    canActivate:[AuthGuard]
+    //canActivate:[AuthGuard]
   },
   {
     path: 'viewuser',
-    component: ViewUserDetailComponent,
-    pathMatch: 'full',
+    component: ViewUserDetailComponent, children: [
+     // { path: ':userId', component: UsersDetailComponent },
+    {path:'**', component: ViewUserDetailComponent}]
    // canActivate:[AuthGuard]
   },
   {

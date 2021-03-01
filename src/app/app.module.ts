@@ -19,6 +19,7 @@ import { AddUserDetailComponent } from './add-user-detail/add-user-detail.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { NgxPopperModule } from 'ngx-popper';
+
 @NgModule({
   declarations: [AppComponent,
     SignInSignUpComponent,
