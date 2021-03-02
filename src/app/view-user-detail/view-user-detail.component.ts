@@ -12,6 +12,7 @@ export class ViewUserDetailComponent implements OnInit {
   //@Input() user: UserViewModel[]=[];
 users:UserDetailModel[] = [];
 showModal=false;
+searchText: string;
 
   constructor(private router:Router, private viewUserService: ViewUserService) { }
 

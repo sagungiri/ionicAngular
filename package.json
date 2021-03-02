@@ -26,6 +26,7 @@
     "bootstrap": "^4.6.0",
     "firebase": "^8.2.7",
     "jquery": "^3.5.1",
+    "ng2-search-filter": "^0.5.1",
     "ngx-popper": "^7.0.0",
     "ngx-summernote": "^0.8.0",
     "popper.js": "^1.16.1",

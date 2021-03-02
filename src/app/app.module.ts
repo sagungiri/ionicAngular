@@ -20,7 +20,7 @@ import { AddUserDetailComponent } from './add-user-detail/add-user-detail.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { NgxPopperModule } from 'ngx-popper';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [AppComponent,
     SignInSignUpComponent,
@@ -32,6 +32,7 @@ import { NgxPopperModule } from 'ngx-popper';
   imports: [BrowserModule,
     CommonModule,
     FormsModule,
+    Ng2SearchPipeModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
