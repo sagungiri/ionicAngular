@@ -1,4 +1,3 @@
-import { UserDetailModel } from './userdetail.model';
 import { ViewUserService } from './../services/viewModal/view-user.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
