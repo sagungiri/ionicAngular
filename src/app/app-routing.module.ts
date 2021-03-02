@@ -7,7 +7,6 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AddUserDetailComponent } from './add-user-detail/add-user-detail.component';
 import {ProfileComponent} from './profile/profile.component';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -23,11 +22,13 @@ const routes: Routes = [
   },
   {
     path: 'viewuser',
-    component: ViewUserDetailComponent, children: [
-      { path: ':id', component: UserdetailComponent },
-    {path:'**', component: ViewUserDetailComponent}]
+    component: ViewUserDetailComponent
    // canActivate:[AuthGuard]
   },
+  { 
+    path: 'viewuser/:id',
+     component: UserdetailComponent,
+     pathMatch: 'full' },
   {
     path: 'profile',
     component: ProfileComponent,

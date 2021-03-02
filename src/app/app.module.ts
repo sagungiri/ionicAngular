@@ -1,3 +1,4 @@
+import { UserdetailComponent } from './userdetail/userdetail.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NgxSummernoteModule } from 'ngx-summernote';
 import { ViewUserDetailComponent } from './view-user-detail/view-user-detail.component';
@@ -25,6 +26,7 @@ import { NgxPopperModule } from 'ngx-popper';
     SignInSignUpComponent,
     AddUserDetailComponent,
     ViewUserDetailComponent,
+    UserdetailComponent,
   ProfileComponent],
   entryComponents: [],
   imports: [BrowserModule,

@@ -1,46 +1,29 @@
+import { ViewUserService } from './../services/viewModal/view-user.service';
 import { Router } from '@angular/router';
-import { Http } from '@angular/http';
 import { Component, OnInit} from '@angular/core';
+
 @Component({
   selector: 'app-view-user-detail',
   templateUrl: './view-user-detail.component.html',
   styleUrls: ['./view-user-detail.component.scss'],
 })
 export class ViewUserDetailComponent implements OnInit {
-
+  //@Input() user: UserViewModel[]=[];
   users = [];
 showModal=false;
 
-  url = 'https://fir-angular-dc1a1-default-rtdb.firebaseio.com/data.json'
-  constructor(private _http: Http,
-    private router:Router) { }
+  constructor(private router:Router, private viewUserService: ViewUserService) { }
 
   ngOnInit() {
-    this._http.get(this.url).subscribe(res => {
-      const data = res.json();
-      console.log('res', data);
+  this.users = this.viewUserService.userDetailHandler();
 
-
-      for (let i in data) {
-        console.log(i);
-        if (data.hasOwnProperty(i)) {
-          console.log('Key is: ' + i + '. Value is: ' + data[i]);
-          this.users.push(data[i]);
-        }
-      }
-    });
-    console.log('users', this.users);
-  }
-
-  listDetail(i){
-   //let dataIndex = i;
-   //this.router.navigateByUrl(i)
-//return dataIndex;
-
-    console.log(this.users[i])
-    // if(this.users[i]){
-    //   this.showModal=true;
+    }
+    // listDetail(i){
+    //   this.router.navigateByUrl(`${i}`);
+    //   console.log(i);
     // }
-   
   }
-}
+
+
+   
+
