@@ -1,3 +1,4 @@
+import { UserDetailModel } from './userdetail.model';
 import { ViewUserService } from './../services/viewModal/view-user.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -17,9 +18,10 @@ viewModal: any;
   ) { }
 
   ngOnInit() {
-    const userId = +this._Activatedroute.snapshot.params['id'];
-    this.viewModal = this.viewUserService.getUserDetailById(userId);
-    console.log('viewModal', this.viewModal)
+//console.log(this.viewModal)
+let userId = +this._Activatedroute.snapshot.params['id'];
+console.log('userId',userId)
+this.viewModal = this.viewUserService.getUserDetailById(userId);
+console.log('viewModal', this.viewModal)
   }
-
 }

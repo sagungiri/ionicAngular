@@ -1,3 +1,4 @@
+import { UserDetailModel } from './../../userdetail/userdetail.model';
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 
@@ -33,9 +34,8 @@ export class ViewUserService {
     return this.users;
     }
     getUserDetailById(id){
-      this.users.find(ind =>{
-        ind.name === id;
-      })
+      return this.users[id]
+      
     }
     
 }

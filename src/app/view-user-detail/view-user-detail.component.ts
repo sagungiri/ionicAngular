@@ -1,3 +1,4 @@
+import { UserDetailModel } from './../userdetail/userdetail.model';
 import { ViewUserService } from './../services/viewModal/view-user.service';
 import { Router } from '@angular/router';
 import { Component, OnInit} from '@angular/core';
@@ -9,7 +10,7 @@ import { Component, OnInit} from '@angular/core';
 })
 export class ViewUserDetailComponent implements OnInit {
   //@Input() user: UserViewModel[]=[];
-  users = [];
+users:UserDetailModel[] = [];
 showModal=false;
 
   constructor(private router:Router, private viewUserService: ViewUserService) { }
@@ -18,10 +19,6 @@ showModal=false;
   this.users = this.viewUserService.userDetailHandler();
 
     }
-    // listDetail(i){
-    //   this.router.navigateByUrl(`${i}`);
-    //   console.log(i);
-    // }
   }
 
 
