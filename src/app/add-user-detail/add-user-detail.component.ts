@@ -1,5 +1,5 @@
 import { Component, OnInit, Sanitizer } from '@angular/core';
-import { Http } from '@angular/http';
+//import { Http } from '@angular/http';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import Swal from 'sweetalert2';
@@ -31,7 +31,7 @@ export class AddUserDetailComponent implements OnInit {
   }
 
   url = 'https://fir-angular-dc1a1-default-rtdb.firebaseio.com/data.json'
-  constructor(private http: Http,
+  constructor(
     private router: Router,
     private loadingCtrl: LoadingController) {
   }
@@ -60,12 +60,12 @@ export class AddUserDetailComponent implements OnInit {
           loadingEl.dismiss();
         }, 2000);
       })
-      this.http.post(this.url, {
-        name: name,
-        address: address,
-        number: number,
-        text: text
-      }).subscribe(res => console.log(res));
+      // this.http.post(this.url, {
+      //   name: name,
+      //   address: address,
+      //   number: number,
+      //   text: text
+      // }).subscribe(res => console.log(res));
       this.router.navigateByUrl('/');
       Swal.fire({
         position: 'center',
