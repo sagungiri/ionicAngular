@@ -35,11 +35,37 @@ export class FirebaseService {
       return this.currentUser$.asObservable();
     }
   
-    async signUp(email: string, password: string) {
+    async signUp(email: string, 
+      password: string, 
+      name: string, 
+      address: string, 
+      number: number, 
+      text: string) {
       await this.firebaseAuth.createUserWithEmailAndPassword(email, password)
         .then(res => {
           this.isLoggedIn = true;
         localStorage.setItem('user', JSON.stringify(res.user));
+        if (res) {
+          this.angularFirestore.collection('users').doc(res.user.uid)
+            .set({
+              email,
+              name,
+              address,
+              number,
+              text
+            }).then(value => {
+            this.angularFirestore.collection<UserData>('users')
+              .doc<UserData>(res.user.uid)
+              .valueChanges()
+              .subscribe(user => {
+                console.log(user);
+                if (user) {
+                  this.currentUser$.next(user);
+                }
+              });
+
+          });
+        }
         })
     }
 
@@ -48,14 +74,14 @@ export class FirebaseService {
       .then(res => {
         this.isLoggedIn = true;
       localStorage.setItem('user', JSON.stringify(res.user));
-      console.log(res);
+     // console.log(res);
       this._userData = this.firebaseAuth.authState;
 
       this.angularFirestore.collection<UserData>('users')
         .doc<UserData>(res.user.uid)
         .valueChanges()
         .subscribe((user) => {
-          console.log(user);
+          //console.log(user);
           this.currentUser = user;
           this.currentUser$.next(this.currentUser);
         });
