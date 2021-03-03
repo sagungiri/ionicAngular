@@ -3,7 +3,6 @@ import { Http } from '@angular/http';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import Swal from 'sweetalert2';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-add-user-detail',
@@ -48,7 +47,7 @@ export class AddUserDetailComponent implements OnInit {
   //     var doc = parser.parseFromString(text, 'text/html');
   //     return doc.body;
   //  }
-    if (name.length == '' && address.length == '' && number.length < 10) {
+    if (name.length == '' && address.length == '' && number.length <= 9) {
       return false;
     }
     else {

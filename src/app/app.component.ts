@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { FirebaseService } from './services/firebase/firebase.service';
+import { FirebaseService } from './services/auth.service';
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { LoadingController } from '@ionic/angular';
@@ -34,6 +34,7 @@ export class AppComponent implements OnInit {
         loadingEl.dismiss();
       }, 2000);
     })
+    localStorage.clear();
     this.firebaseService.logOut();
     this.isLogout.emit();
     this.router.navigateByUrl('/');

@@ -1,7 +1,8 @@
+import { SigninComponent } from './sign-in-sign-up/signin/signin.component';
+import { SignupComponent } from './sign-in-sign-up/signup/signup.component';
 import { UserdetailComponent } from './userdetail/userdetail.component';
-import { AuthGuard } from './auth/auth.guard';
+import { AuthGuard } from './guards/auth.guard';
 import { ViewUserDetailComponent } from './view-user-detail/view-user-detail.component';
-import { SignInSignUpComponent } from './sign-in-sign-up/sign-in-sign-up.component';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AddUserDetailComponent } from './add-user-detail/add-user-detail.component';
@@ -10,7 +11,18 @@ import {ProfileComponent} from './profile/profile.component';
 const routes: Routes = [
   {
     path: '',
-    component: SignInSignUpComponent,
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: SigninComponent,
+    pathMatch: 'full'
+
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
     pathMatch: 'full'
 
   },

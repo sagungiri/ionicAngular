@@ -1,7 +1,6 @@
-import { UserDetailModel } from './../../userdetail/userdetail.model';
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
-
+//angularfirebase
 
 @Injectable({
   providedIn: 'root'
