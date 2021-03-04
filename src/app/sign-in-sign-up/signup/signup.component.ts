@@ -31,7 +31,7 @@ export class SignupComponent implements OnInit {
         loadingEl.dismiss();
       }, 2000);
     })
-    await this.firebaseService.signUp(email, password);
+    await this.firebaseService.signUp(email, password)
     if (this.firebaseService.isLoggedIn)
       this.isSignedIn = true;
     this.router.navigateByUrl('/adduser');
