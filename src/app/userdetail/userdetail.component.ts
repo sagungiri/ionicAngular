@@ -16,8 +16,6 @@ address: '',
 number: 1,
 text: ''
 };
-currentUserData:any;
-
 
   constructor(private userService: UserService,
     private _Activatedroute:ActivatedRoute
@@ -40,10 +38,4 @@ currentUserData:any;
       });
       
     }
-//console.log(this.viewModal)
-// let userId = +this._Activatedroute.snapshot.params['id'];
-// console.log('userId',userId)
-// this.viewModal = this.viewUserService.getUserDetailById(userId);
-// console.log('viewModal', this.viewModal)
-
 }
