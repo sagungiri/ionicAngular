@@ -82,7 +82,7 @@ export class AddUserDetailComponent implements OnInit {
             loadingEl.dismiss();
           }, 2000);
         });
-    this.userService.create(this.userData).then(() => {
+    this.userService.createUser(this.userData).then(() => {
       console.log('Created new item successfully!');
       this.submitted = true;
     });

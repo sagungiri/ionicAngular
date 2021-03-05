@@ -16,11 +16,11 @@ export class UserService {
     this.userRef = db.list(this.dbPath);
   }
 
-  getAll(): AngularFireList<UserData> {
+  getAllUser(): AngularFireList<UserData> {
     return this.userRef;
   }
 
-  create(userData: UserData): any {
+  createUser(userData: UserData): any {
     return this.userRef.push(userData);
   }
 

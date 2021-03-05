@@ -21,7 +21,7 @@ searchText: string;
 
     }
     retrieveUsersData(): void {
-      this.userService.getAll().snapshotChanges().pipe(
+      this.userService.getAllUser().snapshotChanges().pipe(
         map(changes =>
           changes.map(c =>
             ({ key: c.payload.key, ...c.payload.val() })
