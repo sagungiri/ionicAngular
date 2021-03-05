@@ -15,7 +15,7 @@ export class UserdetailComponent implements OnInit{
 userData:UserData={
   name: '',
 address: '',
-number: 1,
+number: 0,
 text: ''
 };
 
