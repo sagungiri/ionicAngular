@@ -23,7 +23,10 @@ export class UserService {
   createUser(userData: UserData): any {
     return this.userRef.push(userData);
   }
-
+  updateUser(key: string, value: any): Promise<void> {
+    return this.userRef.update(key, value);
+  }
+  
   deleteUser(key: string): Promise<void>{
     return this.userRef.remove(key);
   }
