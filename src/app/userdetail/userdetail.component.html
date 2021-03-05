@@ -13,18 +13,19 @@
                 <ion-col size-md='6' offset='1'>
                     <ion-card color="light">
                         <ion-card-header>
-                            <ion-card-title>Hello, This is {{viewModal.name}}</ion-card-title>
-                            <ion-card-subtitle>I'm from {{viewModal.address}}</ion-card-subtitle>
-                            <ion-card-subtitle>You can reach me through {{viewModal.number}}</ion-card-subtitle>
+                            <ion-card-title>Hello, This is {{userData.name}}</ion-card-title>
+                            <ion-card-subtitle>I'm from {{userData.address}}</ion-card-subtitle>
+                            <ion-card-subtitle>You can reach me through {{userData.number}}</ion-card-subtitle>
 
                         </ion-card-header>
                         <ion-card-content>
 
                             <ion-item lines='none' color="light">
-                                <ion-label [innerHTML]= "viewModal.text"></ion-label>
+                                <ion-label [innerHTML]= "userData.text"></ion-label>
                             </ion-item>
+                            
                             <div class='ion-margin-vertical ion-text-right'>
-
+                                <ion-button color='danger' (clcick)='deleteUserData()'>Delete</ion-button>
                                 <ion-button routerLink='/viewuser'>Back</ion-button>
 
                             </div>

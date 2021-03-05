@@ -18,25 +18,25 @@
             <ion-card-content>
               <ion-item>
                 <ion-label position="floating">Full Name</ion-label>
-                <ion-input type='text' name='name' [(ngModel)]="name" required minlength='6'></ion-input>
+                <ion-input type='text' name='name' [(ngModel)]="userData.name" required minlength='6'></ion-input>
               </ion-item>
               <ion-item>
                 <ion-label position="floating">Address</ion-label>
-                <ion-input type='text' name='address' [(ngModel)]="address" required minlength='5'></ion-input>
+                <ion-input type='text' name='address' [(ngModel)]="userData.address" required minlength='5'></ion-input>
               </ion-item>
               <ion-item>
                 <ion-label position="floating">Phone Number</ion-label>
-                <ion-input type='number' name='number' [(ngModel)]="number" required minlength='8'></ion-input>
+                <ion-input type='number' name='number' [(ngModel)]="userData.number" required minlength='8'></ion-input>
               </ion-item>
               <ion-item lines='none'>
                 <ion-list>
                   <ion-label>Bio</ion-label>
-                  <div [ngxSummernote]='config'[(ngModel)]="text"></div>
+                  <div [ngxSummernote]='config'[(ngModel)]="userData.text"></div>
                 <div [ngxSummernoteView]="content"></div>
                 </ion-list>
               </ion-item>
               <div class='ion-margin-vertical ion-text-right'>
-                <ion-button type='submit' (click)="addUserDetailHandler(name, address, number, text)">Submit</ion-button>
+                <ion-button type='submit' (click)="addUserDetail()">Submit</ion-button>
               </div>
             </ion-card-content>
          

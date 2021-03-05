@@ -1,7 +1,8 @@
-import { UserDetailModel } from './../userdetail/userdetail.model';
-import { ViewUserService } from './../services/viewModal/view-user.service';
+import { UserService } from './../services/user.service';
 import { Router } from '@angular/router';
 import { Component, OnInit} from '@angular/core';
+import { UserData } from '../models/user-data.model';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-view-user-detail',
@@ -9,16 +10,26 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./view-user-detail.component.scss'],
 })
 export class ViewUserDetailComponent implements OnInit {
-  //@Input() user: UserViewModel[]=[];
-users:UserDetailModel[] = [];
-showModal=false;
+
+userData?: UserData[];
 searchText: string;
 
-  constructor(private router:Router, private viewUserService: ViewUserService) { }
+  constructor(private router:Router, private userService: UserService) { }
 
   ngOnInit() {
-  this.users = this.viewUserService.userDetailHandler();
+ this.retrieveUsersData();
 
+    }
+    retrieveUsersData(): void {
+      this.userService.getAll().snapshotChanges().pipe(
+        map(changes =>
+          changes.map(c =>
+            ({ key: c.payload.key, ...c.payload.val() })
+          )
+        )
+      ).subscribe(data => {
+        this.userData = data;
+      });
     }
   }
 

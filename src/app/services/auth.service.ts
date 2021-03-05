@@ -41,51 +41,15 @@ export class FirebaseService {
         .then(res => {
           this.isLoggedIn = true;
         localStorage.setItem('user', JSON.stringify(res.user));
-        // if (res) {
-        //   this.angularFirestore.collection('users').doc(res.user.uid)
-        //     .set({
-        //       email,
-        //       name,
-        //       address,
-        //       number,
-        //       text
-        //     }).then(value => {
-        //     this.angularFirestore.collection<UserData>('users')
-        //       .doc<UserData>(res.user.uid)
-        //       .valueChanges()
-        //       .subscribe(user => {
-        //         //console.log(user);
-        //         if (user) {
-        //           this.currentUser$.next(user);
-        //         }
-        //       });
-
-        //   });
-        // }
         })
     }
 
-    // get userData(): Observable<firebase.default.User> {
-    //   return this._userData;
-    // }
 
   async signIn(email: string, password: string) {
     await this.firebaseAuth.signInWithEmailAndPassword(email, password)
       .then(res => {
         this.isLoggedIn = true;
       localStorage.setItem('user', JSON.stringify(res.user));
-     // console.log(res);
-      // this._userData = this.firebaseAuth.authState;
-
-      // this.angularFirestore.collection<UserData>('users')
-      //   .doc<UserData>(res.user.uid)
-      //   .valueChanges()
-      //   .subscribe((user) => {
-      //     //console.log(user);
-      //     this.currentUser = user;
-      //     this.currentUser$.next(this.currentUser);
-      //   });
-
 
     }).catch(err => console.log(err.message));
       }
@@ -95,17 +59,5 @@ export class FirebaseService {
     localStorage.removeItem('user')
   }
 
-  // searchUserInDatabase(user_id: string): Observable<UserData> {
-  //   return this.angularFirestore.collection<UserData>('users').doc<UserData>(user_id).valueChanges();
-  // }
+ 
 }
-
-
-// export interface UserData {
-//   id?: string;
-//   email: string;
-//   name: string;
-//   address: string;
-//   number: number;
-//   text: string;
-// }
