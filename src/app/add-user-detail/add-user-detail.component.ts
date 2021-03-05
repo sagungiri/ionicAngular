@@ -9,37 +9,51 @@ import { UserData } from '../models/user-data.model';
   templateUrl: './add-user-detail.component.html',
   styleUrls: ['./add-user-detail.component.scss'],
 })
-
-
-
 export class AddUserDetailComponent implements OnInit {
   userData: UserData = new UserData();
   submitted = false;
-  isLoading= false;
+  isLoading = false;
   config = {
     placeholder: '',
     tabsize: 2,
     height: '200px',
     toolbar: [
-        ['misc', ['codeview', 'undo', 'redo']],
-        ['style', ['bold', 'italic', 'underline', 'clear']],
-        ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear']],
-        ['fontsize', ['fontname', 'fontsize', 'color']],
-        ['para', ['style', 'ul', 'ol', 'paragraph', 'height']],
-        ['insert', ['table', 'picture', 'link', 'video', 'hr']]
+      ['misc', ['codeview', 'undo', 'redo']],
+      ['style', ['bold', 'italic', 'underline', 'clear']],
+      [
+        'font',
+        [
+          'bold',
+          'italic',
+          'underline',
+          'strikethrough',
+          'superscript',
+          'subscript',
+          'clear',
+        ],
+      ],
+      ['fontsize', ['fontname', 'fontsize', 'color']],
+      ['para', ['style', 'ul', 'ol', 'paragraph', 'height']],
+      ['insert', ['table', 'picture', 'link', 'video', 'hr']],
     ],
-    fontNames: ['Helvetica', 'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Roboto', 'Times']
-  }
+    fontNames: [
+      'Helvetica',
+      'Arial',
+      'Arial Black',
+      'Comic Sans MS',
+      'Courier New',
+      'Roboto',
+      'Times',
+    ],
+  };
 
   constructor(
     private router: Router,
     private loadingCtrl: LoadingController,
-    private userService:UserService) {
-  }
+    private userService: UserService
+  ) {}
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   // addUserDetailHandler(name, address, number, text) {
 
@@ -73,28 +87,28 @@ export class AddUserDetailComponent implements OnInit {
   //   }
   // }
   addUserDetail(): void {
-    this.isLoading= true;
-      this.loadingCtrl.create({keyboardClose:true, message:'Getting Your Data Ready....'})
-        .then(loadingEl=>{
-          loadingEl.present();
-          setTimeout(()=>{
-            this.isLoading= false;
-            loadingEl.dismiss();
-          }, 2000);
-        });
+    this.isLoading = true;
+    this.loadingCtrl
+      .create({ keyboardClose: true, message: 'Getting Your Data Ready....' })
+      .then((loadingEl) => {
+        loadingEl.present();
+        setTimeout(() => {
+          this.isLoading = false;
+          loadingEl.dismiss();
+        }, 2000);
+      });
     this.userService.createUser(this.userData).then(() => {
       console.log('Created new item successfully!');
       this.submitted = true;
     });
-    
+
     this.router.navigateByUrl('/');
     Swal.fire({
       position: 'center',
       icon: 'success',
       title: 'Please Login To Proceed',
       showConfirmButton: false,
-      timer: 2000
+      timer: 2000,
     });
   }
-
 }

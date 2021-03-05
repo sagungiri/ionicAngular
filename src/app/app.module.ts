@@ -6,7 +6,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { NgxSummernoteModule } from 'ngx-summernote';
 import { ViewUserDetailComponent } from './view-user-detail/view-user-detail.component';
 import { CommonModule } from '@angular/common';
-import {  NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -24,15 +24,18 @@ import { NgxPopperModule } from 'ngx-popper';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
-  declarations: [AppComponent,
+  declarations: [
+    AppComponent,
     SignupComponent,
     SigninComponent,
     AddUserDetailComponent,
     ViewUserDetailComponent,
     UserdetailComponent,
-  ProfileComponent],
+    ProfileComponent,
+  ],
   entryComponents: [],
-  imports: [BrowserModule,
+  imports: [
+    BrowserModule,
     CommonModule,
     FormsModule,
     Ng2SearchPipeModule,
@@ -44,10 +47,12 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     SweetAlert2Module,
-   NgxPopperModule.forRoot()
+    NgxPopperModule.forRoot(),
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass:IonicRouteStrategy},
-    FirebaseService],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    FirebaseService,
+  ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

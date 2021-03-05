@@ -3,16 +3,14 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { UserData } from 'src/app/models/user-data.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
-
   private dbPath = '/data';
 
-  userRef: AngularFireList <UserData>;
- 
+  userRef: AngularFireList<UserData>;
 
-  constructor(private db: AngularFireDatabase) { 
+  constructor(private db: AngularFireDatabase) {
     this.userRef = db.list(this.dbPath);
   }
 
@@ -26,10 +24,8 @@ export class UserService {
   updateUser(key: string, value: any): Promise<void> {
     return this.userRef.update(key, value);
   }
-  
-  deleteUser(key: string): Promise<void>{
+
+  deleteUser(key: string): Promise<void> {
     return this.userRef.remove(key);
   }
-    
 }
-

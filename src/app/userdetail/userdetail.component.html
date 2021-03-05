@@ -1,67 +1,102 @@
 <ion-app>
-    <ion-header>
-        <ion-toolbar color='secondary'>
-            <ion-buttons slot="start" id="main-content">
-                <ion-menu-button></ion-menu-button>
-            </ion-buttons>
-            <ion-title> User's Detail</ion-title>
-        </ion-toolbar>
-    </ion-header>
-    <ion-content>
-        <ion-grid>
-            <ion-row>
-                <ion-col size-md='6' offset='1' *ngIf="!showUpdateModal">
-                    <ion-card color="light">
-                        <ion-card-header>
-                            <ion-card-title>Hello, This is {{userData.name}}</ion-card-title>
-                            <ion-card-subtitle>I'm from {{userData.address}}</ion-card-subtitle>
-                            <ion-card-subtitle>You can reach me through {{userData.number}}</ion-card-subtitle>
+  <ion-header>
+    <ion-toolbar color="secondary">
+      <ion-buttons slot="start" id="main-content">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title> User's Detail</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="6" offset="1" *ngIf="!showUpdateModal">
+          <ion-card color="light">
+            <ion-card-header>
+              <ion-card-title
+                >Hello, This is {{ userData.name }}</ion-card-title
+              >
+              <ion-card-subtitle
+                >I'm from {{ userData.address }}</ion-card-subtitle
+              >
+              <ion-card-subtitle
+                >You can reach me through
+                {{ userData.number }}</ion-card-subtitle
+              >
+            </ion-card-header>
+            <ion-card-content>
+              <ion-item lines="none" color="light">
+                <ion-label [innerHTML]="userData.text"></ion-label>
+              </ion-item>
 
-                        </ion-card-header>
-                        <ion-card-content>
-
-                            <ion-item lines='none' color="light">
-                                <ion-label [innerHTML]= "userData.text"></ion-label>
-                            </ion-item>
-                            
-                            <div class='ion-margin-vertical ion-text-right'>
-                                <ion-button color='success' (click)='forUpdatingUser()'>Update</ion-button>
-                                <ion-button color='danger' (click)='deleteUserData()'>Delete</ion-button>
-                                <ion-button routerLink='/viewuser'>Back</ion-button>
-
-                            </div>
-                        </ion-card-content>
-                    </ion-card>
-                </ion-col>
-                <ion-col size-md='8' offset='2'>
-<ion-card color="light" *ngIf="showUpdateModal">
-    <ion-card-content>
-        <ion-item>
-            <ion-label position="floating">Full Name</ion-label>
-            <ion-input type='text' name='name' [(ngModel)]="userData.name" required minlength='6'></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Address</ion-label>
-            <ion-input type='text' name='address' [(ngModel)]="userData.address" required minlength='5'></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Phone Number</ion-label>
-            <ion-input type='number' name='number' [(ngModel)]="userData.number" required minlength='8'></ion-input>
-          </ion-item>
-          <ion-item lines='none'>
-            <ion-list>
-              <ion-label>Bio</ion-label>
-              <div [ngxSummernote]='config'[(ngModel)]="userData.text"></div>
-            <div [ngxSummernoteView]="content"></div>
-            </ion-list>
-          </ion-item>
-          <div class='ion-margin-vertical ion-text-right'>
-            <ion-button type='submit' (click)="updateUserData()" color='success'>Update</ion-button>
-          </div>
-    </ion-card-content>
-</ion-card>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-    </ion-content>
+              <div class="ion-margin-vertical ion-text-right">
+                <ion-button color="success" (click)="forUpdatingUser()"
+                  >Update</ion-button
+                >
+                <ion-button color="danger" (click)="deleteUserData()"
+                  >Delete</ion-button
+                >
+                <ion-button routerLink="/viewuser">Back</ion-button>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size-md="8" offset="2">
+          <ion-card color="light" *ngIf="showUpdateModal">
+            <ion-card-content>
+              <ion-item>
+                <ion-label position="floating">Full Name</ion-label>
+                <ion-input
+                  type="text"
+                  name="name"
+                  [(ngModel)]="userData.name"
+                  required
+                  minlength="6"
+                >
+                </ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Address</ion-label>
+                <ion-input
+                  type="text"
+                  name="address"
+                  [(ngModel)]="userData.address"
+                  required
+                  minlength="5"
+                ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Phone Number</ion-label>
+                <ion-input
+                  type="number"
+                  name="number"
+                  [(ngModel)]="userData.number"
+                  required
+                  minlength="8"
+                ></ion-input>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-list>
+                  <ion-label>Bio</ion-label>
+                  <div
+                    [ngxSummernote]="config"
+                    [(ngModel)]="userData.text"
+                  ></div>
+                  <div [ngxSummernoteView]="content"></div>
+                </ion-list>
+              </ion-item>
+              <div class="ion-margin-vertical ion-text-right">
+                <ion-button
+                  type="submit"
+                  (click)="updateUserData()"
+                  color="success"
+                  >Update</ion-button
+                >
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
 </ion-app>

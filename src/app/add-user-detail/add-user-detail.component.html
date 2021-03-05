@@ -1,45 +1,64 @@
 <ion-app>
   <ion-header>
-    <ion-toolbar color='secondary'>
+    <ion-toolbar color="secondary">
       <ion-title> Detail Form</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
     <ion-grid>
       <ion-row>
-        <ion-col size-md='8' offset='2'>
+        <ion-col size-md="8" offset="2">
           <ion-card>
-         
             <ion-card-header>
-              <ion-card-title>
-                Please Fill Up Your Details
-              </ion-card-title>
+              <ion-card-title> Please Fill Up Your Details </ion-card-title>
             </ion-card-header>
             <ion-card-content>
               <ion-item>
                 <ion-label position="floating">Full Name</ion-label>
-                <ion-input type='text' name='name' [(ngModel)]="userData.name" required minlength='6'></ion-input>
+                <ion-input
+                  type="text"
+                  name="name"
+                  [(ngModel)]="userData.name"
+                  required
+                  minlength="6"
+                ></ion-input>
               </ion-item>
               <ion-item>
                 <ion-label position="floating">Address</ion-label>
-                <ion-input type='text' name='address' [(ngModel)]="userData.address" required minlength='5'></ion-input>
+                <ion-input
+                  type="text"
+                  name="address"
+                  [(ngModel)]="userData.address"
+                  required
+                  minlength="5"
+                ></ion-input>
               </ion-item>
               <ion-item>
                 <ion-label position="floating">Phone Number</ion-label>
-                <ion-input type='number' name='number' [(ngModel)]="userData.number" required minlength='8'></ion-input>
+                <ion-input
+                  type="number"
+                  name="number"
+                  [(ngModel)]="userData.number"
+                  required
+                  minlength="8"
+                ></ion-input>
               </ion-item>
-              <ion-item lines='none'>
+              <ion-item lines="none">
                 <ion-list>
                   <ion-label>Bio</ion-label>
-                  <div [ngxSummernote]='config'[(ngModel)]="userData.text"></div>
-                <div [ngxSummernoteView]="content"></div>
+                  <div
+                    [ngxSummernote]="config"
+                    [(ngModel)]="userData.text"
+                  ></div>
+                  <div [ngxSummernoteView]="content"></div>
                 </ion-list>
               </ion-item>
-              <div class='ion-margin-vertical ion-text-right'>
-                <ion-button type='submit' (click)="addUserDetail()">Submit</ion-button>
+              <div class="ion-margin-vertical ion-text-right">
+                <ion-button type="submit" (click)="addUserDetail()"
+                  >Submit</ion-button
+                >
               </div>
             </ion-card-content>
-         
           </ion-card>
         </ion-col>
       </ion-row>

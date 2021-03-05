@@ -9,35 +9,35 @@ import { LoadingController } from '@ionic/angular';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  
-  isLoading=false;
+  isLoading = false;
   @Output() isLogout = new EventEmitter<void>();
 
-  constructor(public firebaseService: FirebaseService,
-     public menuCtrl: MenuController,
-     private loadingCtrl: LoadingController,
-     private router: Router) { }
+  constructor(
+    public firebaseService: FirebaseService,
+    public menuCtrl: MenuController,
+    private loadingCtrl: LoadingController,
+    private router: Router
+  ) {}
 
-  ngOnInit(){
-}
+  ngOnInit() {}
   toggleMenu() {
-    this.menuCtrl.toggle(); 
+    this.menuCtrl.toggle();
   }
   logout = () => {
-    this.menuCtrl.toggle(); 
-    this.isLoading= true;
-    this.loadingCtrl.create({keyboardClose:true, message:'Logging Out.....'})
-    .then(loadingEl=>{
-      loadingEl.present();
-      setTimeout(()=>{
-        this.isLoading= false;
-        loadingEl.dismiss();
-      }, 2000);
-    })
+    this.menuCtrl.toggle();
+    this.isLoading = true;
+    this.loadingCtrl
+      .create({ keyboardClose: true, message: 'Logging Out.....' })
+      .then((loadingEl) => {
+        loadingEl.present();
+        setTimeout(() => {
+          this.isLoading = false;
+          loadingEl.dismiss();
+        }, 2000);
+      });
     localStorage.clear();
     this.firebaseService.logOut();
     this.isLogout.emit();
     this.router.navigateByUrl('/');
-
-  }
+  };
 }
